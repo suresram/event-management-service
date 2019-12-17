@@ -29,6 +29,7 @@ public class EventManagementController {
 		event.setStatus("open");
 		event.setCreatedBy(userId);
 		event.setCreatedDate(new Date());
+		eventManagementService.save(event);
 		return ResponseEntity.ok(event);
 	}
 	
