@@ -26,6 +26,7 @@ public class EventManagementController {
 	@ResponseBody
 	public ResponseEntity<Event> save(@Valid @RequestBody Event event, @RequestHeader(value = "userId", required = true) String userId,
 			@RequestHeader(value = "roles", required = true) String roles) {
+		event.setStatus("open");
 		event.setCreatedBy(userId);
 		event.setCreatedDate(new Date());
 		return ResponseEntity.ok(event);
