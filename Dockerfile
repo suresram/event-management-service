@@ -10,6 +10,6 @@ FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=maven /app/app.jar ./app.jar
 
-EXPOSE 8765
+EXPOSE 8767
 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.cloud.config.uri=http://config-server-outreach.apps.na311.openshift.opentlc.com","-jar","/app/app.jar"]
